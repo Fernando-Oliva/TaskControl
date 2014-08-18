@@ -1,0 +1,54 @@
+﻿@model TaskControl.Models.Task
+
+@{
+    ViewBag.Title = "Crear una nueva tarea";
+}
+
+<div class="content-wrapper" style="background-color:Orange; margin-bottom:10px; padding-bottom:10px;">
+    <h2>Crear una nueva tarea</h2>
+</div>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Task</legend>
+
+        <div class="editor-label">
+            @Html.Label("Descripción de la Tarea")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaskDescription)
+            @Html.ValidationMessageFor(model => model.TaskDescription)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.Label("Asignada a")
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"])
+            @Html.ValidationMessageFor(model => model.Who)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.Label("Realizada")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Do)
+            @Html.ValidationMessageFor(model => model.Do)
+        </div>
+        <br />
+        <div align="center">
+            <input type="submit" value="Create" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

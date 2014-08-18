@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TaskControl.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2 style="background-color:Orange">Users</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div style="height:400px">
+<table align="center" style="border: 1px solid black;">
+    <tr style="background-color:#D0D0D0; border: 1px solid black;">
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Pending task control</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div>
+                    <p class="site-title"><strong><img src="../../Images/logo-seguros-broker.png"  width="200px" alt="segurosbrokerlogo" /></strong></p><br />
+                    <div align="right" style="margin-right:5px; margin-bottom:5px">
+                    @if (Session["auth"] == null)
+                    { 
+                        <span>@Html.ActionLink("Log In", "Login", "User")</span>
+                    }
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper" >
+                <div style="text-align:center;">
+                    &copy; @DateTime.Now.Year - SegurosBroker.com
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

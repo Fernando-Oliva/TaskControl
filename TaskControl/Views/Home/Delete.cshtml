@@ -1,0 +1,39 @@
+﻿@model TaskControl.Models.Task
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaskDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaskDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Who)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Who)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Do)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Do)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

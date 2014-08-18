@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TaskControl.Models.Task>
+@{
+    ViewBag.Title = "TAREAS PENDIENTES";
+}
+@section featured {
+    <section class="featured" >
+        <div class="content-wrapper" style="background-color:Orange">
+            <hgroup  style="height:50px;"  class="title" style="background-color:Orange">
+                <h1>@ViewBag.Title</h1>
+            </hgroup> 
+        </div>
+@if (Session["auth"] != null && Session["auth"].ToString() == "1")
+{
+    <p style="text-align:center">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<div style="height:400px">
+    <table align="center" style="border: 1px solid black;">
+    <tr style="background-color:#D0D0D0; border: 1px solid black;"> 
+        <th style="width:500px;">
+            @Html.DisplayNameFor(model => model.TaskDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Who)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Do)
+        </th >
+        <th>
+            Operations
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="border: 1px solid black;">
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.TaskDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Who)
+        </td>
+        @if (item.Do.Equals(true))
+        {
+            <td style="background-color:Green; border: 1px solid black;">
+            </td>
+        }
+        else
+        {
+            <td style="background-color:Red; border: 1px solid black;">
+            </td>
+        }
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+    </section>
+}
+

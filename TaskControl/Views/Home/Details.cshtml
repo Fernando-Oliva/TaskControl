@@ -1,0 +1,36 @@
+﻿@model TaskControl.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaskDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaskDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Who)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Who)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Do)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Do)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
