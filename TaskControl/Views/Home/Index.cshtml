@@ -19,17 +19,20 @@
     <table align="center" style="border: 1px solid black;">
     <tr style="background-color:#D0D0D0; border: 1px solid black;"> 
         <th style="width:500px;">
-            @Html.DisplayNameFor(model => model.TaskDescription)
+            @Html.DisplayName("Descripción")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Who)
+            @Html.DisplayName("Asignada a")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Do)
+            @Html.DisplayName("Do")
         </th >
+        @if (Session["auth"] != null)
+        {
         <th>
-            Operations
+            Opciones
         </th>
+        }
     </tr>
 
 @foreach (var item in Model) {
@@ -50,11 +53,13 @@
             <td style="background-color:Red; border: 1px solid black;">
             </td>
         }
-        
+        @if (Session["auth"] != null)
+        {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
+        }
     </tr>
 }
 
