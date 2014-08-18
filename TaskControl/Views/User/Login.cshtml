@@ -9,19 +9,23 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true, "Login fallido");
+    @Html.ValidationSummary(true, "Login failed");
     <div>
         <fieldset>
             <legend>Login Form</legend>
             <div>@Html.LabelFor(model=>model.UserName)</div>
             <div>
                 @Html.TextBoxFor(model => model.UserName)
+            </div>
+            <div>
                 @Html.ValidationMessageFor(model => model.UserName)
             </div>
 
             <div>@Html.LabelFor(model => model.Password)</div>
             <div>
                 @Html.PasswordFor(model => model.Password)
+            </div>
+            <div>
                 @Html.ValidationMessageFor(model => model.Password)
             </div>
             <input type="submit" value="Login" />

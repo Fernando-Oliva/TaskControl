@@ -4,6 +4,8 @@
     ViewBag.Title = "Users";
 }
 
+@if (Session["auth"] != null)
+{
 <h2 style="background-color:Orange">Users</h2>
 
 <p>
@@ -21,7 +23,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.UserName)
@@ -30,11 +33,16 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }
 
 </table>
 </div>
+}
+else
+{
+    <h1>Not Permissions!</h1> 
+}
