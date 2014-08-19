@@ -14,7 +14,7 @@
         <header>
             <div class="content-wrapper">
                 <div>
-                    <p class="site-title">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</p><br />
+                    <p class="site-title">{be<strong>code</strong>}</p><br />
                     <div align="right" style="margin-right:5px; margin-bottom:5px">
                     @if (Session["auth"] == null)
                     { 
@@ -37,8 +37,8 @@
         </div>
         <footer>
             <div class="content-wrapper" >
-                <div style="text-align:center; padding-top:10px;">
-                    &copy; @DateTime.Now.Year - SegurosBroker.com
+                <div style="text-align:center; padding-top:10px; font-family:Courier;">
+                    &copy; @DateTime.Now.Year - {be<strong>code</strong>}
                 </div>
             </div>
         </footer>

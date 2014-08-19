@@ -114,7 +114,7 @@ header .content-wrapper {
 
 footer {
     clear: both;
-    background-color: Orange;
+    background-color: #A0A0A0;
     font-size: .8em;
     height: 100px;
 }
@@ -124,11 +124,10 @@ footer {
 ----------------------------------------------------------*/
 .site-title {
     color: Black;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
-    font-size: 2.3em;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 50px;
     margin: 0;
     margin-left:10px;
-    font-family:Consolas;
     text-align:left;
 }
 
