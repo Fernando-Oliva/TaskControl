@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using TaskControl.Helpers
+<!DOCTYPE html>
 <html lang="es">
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,8 +14,8 @@
         <header>
             <div class="content-wrapper">
                 <div>
-                    <p class="site-title"><img src="../../Images/logo-seguros-broker.png"  width="200px" alt="segurosbrokerlogo" /></p><br />
-                    
+                    <p class="site-title">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</p><br />
+                    <!-- <img src="../../Images/logo-seguros-broker.png"  width="200px" alt="segurosbrokerlogo" />-->
                     <div align="right" style="margin-right:5px; margin-bottom:5px">
                     @if (Session["auth"] == null)
                     { 
