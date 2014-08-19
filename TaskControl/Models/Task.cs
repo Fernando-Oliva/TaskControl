@@ -13,10 +13,13 @@ namespace TaskControl.Models
     {
         public int ID { get; set; }
 
+        [Required(ErrorMessage = "Task name is required")]
+        public string TaskName { get; set; }
+
+        [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "Task description is required")]
         public string TaskDescription { get; set; }
 
-        [Required(ErrorMessage = "Who is required")]
         public string Who { get; set; }
 
         public bool Do { get; set; }
@@ -24,8 +27,6 @@ namespace TaskControl.Models
 
     public class TaskDBContext : DbContext
     {
-       
-
         public DbSet<Task> Tasks { get; set; }
     }
 

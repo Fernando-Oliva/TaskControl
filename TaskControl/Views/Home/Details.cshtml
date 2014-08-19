@@ -4,33 +4,52 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="background-color:Orange; margin-bottom:20px; padding-bottom:10px; padding-top:10px;">Details</h2>
 
 <fieldset>
     <legend>Task</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TaskDescription)
+         <strong>@Html.DisplayName("Tarea")</strong>
     </div>
+    <br />
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaskName)
+    </div>
+    <br />
+    <div class="display-label">
+         <strong>@Html.DisplayName("Descripción")</strong>
+    </div>
+    <br />
     <div class="display-field">
         @Html.DisplayFor(model => model.TaskDescription)
     </div>
-
+    <br />
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Who)
+         <strong>@Html.DisplayName("Asignado a")</strong>
     </div>
+    <br />
     <div class="display-field">
+    @if (string.IsNullOrEmpty(Html.DisplayFor(model => model.Who).ToString()))
+    {
+        @Html.DisplayName("-- Sin Asignar --")
+    }
+    else
+    {
         @Html.DisplayFor(model => model.Who)
+    }
     </div>
-
+    <br />
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Do)
+         <strong>@Html.DisplayNameFor(model => model.Do)</strong>
     </div>
+    <br />
     <div class="display-field">
         @Html.DisplayFor(model => model.Do)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

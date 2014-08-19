@@ -5,7 +5,7 @@
 @section featured {
     <section class="featured" >
         <div class="content-wrapper" style="background-color:Orange">
-            <hgroup  style="height:50px;"  class="title" style="background-color:Orange">
+            <hgroup  style="height:50px; padding-top:20px;"  class="title" style="background-color:Orange">
                 <h1>@ViewBag.Title</h1>
             </hgroup> 
         </div>
@@ -18,8 +18,8 @@
 <div style="height:400px">
     <table align="center" style="border: 1px solid black;">
     <tr style="background-color:#D0D0D0; border: 1px solid black;"> 
-        <th style="width:500px;">
-            @Html.DisplayName("Descripción")
+        <th style="width:250px;">
+            @Html.DisplayName("Tarea")
         </th>
         <th>
             @Html.DisplayName("Asignada a")
@@ -38,10 +38,17 @@
 @foreach (var item in Model) {
     <tr style="border: 1px solid black;">
         <td align="center">
-            @Html.DisplayFor(modelItem => item.TaskDescription)
+            @Html.DisplayFor(modelItem => item.TaskName)
         </td>
         <td>
+        @if(string.IsNullOrEmpty(item.Who))
+        {
+            @Html.DisplayName("-- Sin Asignar --")    
+        }
+        else
+        {
             @Html.DisplayFor(modelItem => item.Who)
+        }
         </td>
         @if (item.Do.Equals(true))
         {
@@ -57,7 +64,8 @@
         {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID }) 
         </td>
         }
     </tr>

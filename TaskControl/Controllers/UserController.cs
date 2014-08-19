@@ -65,6 +65,14 @@ namespace TaskControl.Controllers
 
             return View(user);
         }
+
+       
+        public ActionResult Logout()
+        {
+            Session["auth"] = null;
+
+            return RedirectToAction("Index", "Home");
+        }
         //
         // GET: /User/
 

@@ -9,7 +9,7 @@ body {
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
 }
@@ -394,7 +394,7 @@ fieldset {
 }
 
     fieldset legend {
-        display: none;
+        display:none;
     }
 
     fieldset ol {
@@ -524,13 +524,14 @@ table {
     border-spacing: 0;
     margin-top: 0.75em;
     border: 0 none;
+    margin-top:50px;
 }
 
 th {
     font-size: 1.2em;
     text-align: center;
     border: none 0px;
-    padding-left:10px;
+    padding:10px 20px 10px 20px;
 }
 
     th a {
@@ -570,8 +571,7 @@ th {
     }
 
 td {
-	padding-left:20px;
-	padding-right:20px;
+	padding:10px 20px 10px 20px;
     text-align:center;
     border: 0 none;
 }

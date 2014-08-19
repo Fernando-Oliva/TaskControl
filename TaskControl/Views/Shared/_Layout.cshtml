@@ -13,7 +13,8 @@
         <header>
             <div class="content-wrapper">
                 <div>
-                    <p class="site-title"><strong><img src="../../Images/logo-seguros-broker.png"  width="200px" alt="segurosbrokerlogo" /></strong></p><br />
+                    <p class="site-title"><img src="../../Images/logo-seguros-broker.png"  width="200px" alt="segurosbrokerlogo" /></p><br />
+                    
                     <div align="right" style="margin-right:5px; margin-bottom:5px">
                     @if (Session["auth"] == null)
                     { 
@@ -21,7 +22,8 @@
                     }
                     else
                     {
-                        <span>@Html.ActionLink("New User", "Create", "User")</span>
+                        <span>@Html.ActionLink("Create User", "Create", "User") | </span>
+                        <span>@Html.ActionLink("Log Out", "Logout", "User")</span>
                     }
                     </div>
                 </div>
@@ -35,7 +37,7 @@
         </div>
         <footer>
             <div class="content-wrapper" >
-                <div style="text-align:center;">
+                <div style="text-align:center; padding-top:10px;">
                     &copy; @DateTime.Now.Year - SegurosBroker.com
                 </div>
             </div>

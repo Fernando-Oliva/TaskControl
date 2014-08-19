@@ -15,8 +15,21 @@
         <legend>Task</legend>
 
         <div class="editor-label">
+            @Html.Label("Tarea")
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaskName)
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.TaskName)
+        </div>
+
+        <br />
+        <div class="editor-label">
             @Html.Label("Descripción de la Tarea")
         </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.TaskDescription)
         </div>
@@ -29,7 +42,7 @@
         </div>
         <br />
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"])
+            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"], "Sin Asignar")
             @Html.ValidationMessageFor(model => model.Who)
         </div>
         <br />
@@ -46,7 +59,7 @@
         </div>
     </fieldset>
 }
-
+<br />
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
