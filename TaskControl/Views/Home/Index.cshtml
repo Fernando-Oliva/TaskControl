@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "TAREAS PENDIENTES";
+    ViewBag.NotPass = "You cant't pass!!";
 }
 @section featured {
     <section class="featured" >
@@ -17,8 +18,8 @@
     </p>
 }
 <div style="height:400px">
-    <table align="center" style="border: 1px solid black;">
-    <tr style="background-color:#D0D0D0; border: 1px solid black;"> 
+    <table align="center">
+    <tr> 
         <th style="width:250px;">
             @Html.DisplayName("Tarea")
         </th>
@@ -37,11 +38,11 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr style="border: 1px solid black;">
+    <tr>
         <td align="center">
-            @Html.DisplayFor(modelItem => item.TaskName)
+            <strong>@Html.DisplayFor(modelItem => item.TaskName)</strong>
         </td>
-        <td>
+        <td class="gray">
         @if(string.IsNullOrEmpty(item.Who))
         {
             @Html.DisplayName("-- Sin Asignar --")    
@@ -53,12 +54,18 @@
         </td>
         @if (item.Do.Equals(true))
         {
-            <td style="background-color:Green; border: 1px solid black;">
+            <td>
+                <svg height="10" width="25">
+                    <circle cx="15" cy="5" r="10" fill="green" />
+                </svg>
             </td>
         }
         else
         {
-            <td style="background-color:Red; border: 1px solid black;">
+            <td>
+                <svg height="10" width="25">
+                    <circle cx="15" cy="5" r="10" fill="red" />
+                </svg>
             </td>
         }
         @if (Session["auth"] != null)

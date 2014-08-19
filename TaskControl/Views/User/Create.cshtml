@@ -2,11 +2,16 @@
 
 @{
     ViewBag.Title = "Create";
+    ViewBag.NotPass = "You can't pass!!";
 }
+
+@if (Session["auth"] != null && Session["auth"].ToString() == "1")
+{
 
 <h2 style="background-color:Orange; padding-top:10px; padding-bottom:10px; margin:20px;">Create</h2>
 
-@using (Html.BeginForm()) {
+using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -37,7 +42,11 @@
 <div align="center">
     @Html.ActionLink("Back to List", "Index")
 </div>
-
+}
+else
+{
+    <h1>@ViewBag.NotPass</h1> 
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
