@@ -6,19 +6,19 @@
 
 @if (Session["auth"] != null)
 {
-<h2 style="background-color:Orange">Users</h2>
+<h2 style="background-color:Orange; padding-bottom:10px; padding-top:10px; margin-bottom:20px;" >Users</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <div style="height:400px">
-<table align="center" style="border: 1px solid black;">
-    <tr style="background-color:#D0D0D0; border: 1px solid black;">
+<table align="center">
+    <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserName)
+            @Html.DisplayName("USER")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayName("PASSWORD")
         </th>
         <th></th>
     </tr>

@@ -22,6 +22,8 @@ using (Html.BeginForm())
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.UserName)
+        </div>
+        <div>
             @Html.ValidationMessageFor(model => model.UserName)
         </div>
 
@@ -30,6 +32,8 @@ using (Html.BeginForm())
         </div>
         <div class="editor-field">
             @Html.PasswordFor(model => model.Password)
+        </div>
+        <div>
             @Html.ValidationMessageFor(model => model.Password)
         </div>
 

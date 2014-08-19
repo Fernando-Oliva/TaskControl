@@ -4,12 +4,12 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 style="background-color:Orange; padding-bottom:10px; padding-top:10px; margin-bottom:20px;">Edit</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset style="height:500px">
         <legend>Task</legend>
 
         @Html.HiddenFor(model => model.ID)
