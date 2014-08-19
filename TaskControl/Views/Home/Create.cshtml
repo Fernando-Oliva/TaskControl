@@ -42,7 +42,7 @@
         </div>
         <br />
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"], "Sin Asignar")
+            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"],)
             @Html.ValidationMessageFor(model => model.Who)
         </div>
         <br />

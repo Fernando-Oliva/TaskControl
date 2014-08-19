@@ -75,6 +75,12 @@ namespace TaskControl.Controllers
             {
                 return HttpNotFound();
             }
+
+            var users = from user in db2.Users
+                        select user.UserName;
+
+            ViewData["Users"] = new SelectList(users);
+
             return View(task);
         }
 
@@ -86,10 +92,18 @@ namespace TaskControl.Controllers
         {
             if (ModelState.IsValid)
             {
+                var users = from user in db2.Users
+                            select user.UserName;
+
+                ViewData["Users"] = new SelectList(users);
+
                 db.Entry(task).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            
+
             return View(task);
         }
 

@@ -15,32 +15,50 @@
         @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TaskDescription)
+            @Html.Label("Tarea")
         </div>
+        <br />
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaskName)
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.TaskName)
+        </div>
+
+        <br />
+        <div class="editor-label">
+            @Html.Label("Descripción de la Tarea")
+        </div>
+        <br />
         <div class="editor-field">
             @Html.EditorFor(model => model.TaskDescription)
+        </div>
+        <div>
             @Html.ValidationMessageFor(model => model.TaskDescription)
         </div>
-
+        <br />
         <div class="editor-label">
-            @Html.LabelFor(model => model.Who)
+            @Html.Label("Asignada a")
         </div>
+        <br />
         <div class="editor-field">
-            @Html.EditorFor(model => model.Who)
+            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"])
             @Html.ValidationMessageFor(model => model.Who)
         </div>
-
+        <br />
         <div class="editor-label">
-            @Html.LabelFor(model => model.Do)
+            @Html.Label("Realizada")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Do)
             @Html.ValidationMessageFor(model => model.Do)
         </div>
-
+        <br />
+        <div align="center">
         <p>
             <input type="submit" value="Save" />
         </p>
+        </div>
     </fieldset>
 }
 

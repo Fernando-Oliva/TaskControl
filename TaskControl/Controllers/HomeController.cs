@@ -81,6 +81,12 @@ namespace TaskControl.Controllers
             {
                 return HttpNotFound();
             }
+
+            var users = from user in db2.Users
+                        select user.UserName;
+
+            ViewData["Users"] = new SelectList(users);
+
             return View(task);
         }
 
