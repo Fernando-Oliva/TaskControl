@@ -13,7 +13,7 @@
             </hgroup> 
         </div>
 
-<div style="height:400px">
+<div>
     <table align="center">
     @if (Session["auth"] != null && Session["auth"].ToString() == "1")
     {
@@ -22,15 +22,32 @@
      <th><span>@Html.ActionLink("Nueva tarea", "Create")</span></th>
     </tr>
     }
+    
+
+    @{ string cl = "";
+       string tdR = "";
+       int i = 0;}
 @foreach (var item in Model) {
+    i++;
     <tr>
+    @if(i==Model.Count())
+    {
+        cl = "noBorder";
+        tdR = "tdRightNoBorder";
+    }
+    else
+    {
+        cl = "yesBorder";
+        tdR = "tdRightYesBorder";
+    }
+    <td class="@cl">
     @if (item.Do.Equals(true))
-        {
-            <td>
+    {
+          
                 <svg class="circle" height="13" width="25">
                     <circle cx="15" cy="5" r="10" fill="green" />
                 </svg>
-                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName)</span> / 
+                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName) / </span>
             <strong class="taskName">
                 @if (string.IsNullOrEmpty(item.Who))
                 {
@@ -44,15 +61,15 @@
             <br />
             <br />
             <span class="normalText">@Html.DisplayFor(modelItem => item.TaskDescription)</span>
-            </td>
-        }
+           
+    }
     else
     {
-            <td>
+        
                 <svg class="circle" height="13" width="25">
                     <circle cx="15" cy="5" r="10" fill="red" />
                 </svg>
-                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName)</span> / 
+                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName) / </span>
             <strong class="taskName">
                 @if (string.IsNullOrEmpty(item.Who))
                 {
@@ -66,18 +83,18 @@
             <br />
             <br />
             <span class="normalText">@Html.DisplayFor(modelItem => item.TaskDescription)</span>
-            </td>
+            
     }
-
+    </td>
         @if (Session["auth"] != null)
         {
-        <td class="tdRight">
+        <td class="@tdR">
             <button class="newBtn" onclick="location.href='@Url.Action("Edit", "Home", new { id = item.ID }) '">Edit</button>
             <button class="newBtn" onclick="location.href='@Url.Action("Edit", "Home", new { id = item.ID }) '">Delete</button>
         </td>
         }
     </tr>
-}
+    }
 
 </table>
 </div>

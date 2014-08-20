@@ -107,6 +107,9 @@ footer {
     clear: both;
     font-size: .8em;
     height: 100px;
+    border-top:1px solid #E8E8E8;
+    margin-left:250px;
+    margin-right:250px;
 }
 
 
@@ -582,6 +585,11 @@ td {
     font-size:20px;
 }
 
+
+.noBorder{ border-bottom:none;}
+
+.yesBorder{}
+
 td a:link, td a:visited, td a:active {
         color: #4183c4;
         font-weight: 600;
@@ -615,13 +623,20 @@ td a:hover {
 	border-top:none;
 	}
 	
-.tdRight{
+.tdRightYesBorder{
 	text-align:right;
 	padding-right:0px;
 	border-top:none;
 	width:135px;
 	}
 
+.tdRightNoBorder{
+	text-align:right;
+	padding-right:0px;
+	border-top:none;
+	border-bottom:none;
+	width:135px;
+	}
 
 tr.pager td {
     padding: 0 0.25em 0 0;
