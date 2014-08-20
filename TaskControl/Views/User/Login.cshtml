@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="background-color:Orange; padding-bottom:10px; margin-bottom:10px;">Login</h2>
+<h2 style="padding-bottom:10px; margin-bottom:30px; margin-top:40px;">Login</h2>
 
 @using (Html.BeginForm())
 {
@@ -13,22 +13,20 @@
     <div>
         <fieldset>
             <legend>Login Form</legend>
-            <div>@Html.LabelFor(model=>model.UserName)</div>
             <div>
-                @Html.TextBoxFor(model => model.UserName)
+                @Html.TextBoxFor(model => model.UserName, new { placeholder = "User name"})
             </div>
             <div>
                 @Html.ValidationMessageFor(model => model.UserName)
             </div>
 
-            <div>@Html.LabelFor(model => model.Password)</div>
             <div>
-                @Html.PasswordFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password, new { placeholder = "Password"})
             </div>
             <div>
                 @Html.ValidationMessageFor(model => model.Password)
             </div>
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login" class="loginButton" />
         </fieldset>
     </div> 
 }
