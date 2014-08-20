@@ -20,6 +20,7 @@ namespace TaskControl.Controllers
 
         public ActionResult Index()
         {
+
             return View(db.Tasks.ToList());
         }
 
@@ -83,6 +84,9 @@ namespace TaskControl.Controllers
 
             return View(task);
         }
+
+
+
 
         //
         // POST: /Task/Edit/5

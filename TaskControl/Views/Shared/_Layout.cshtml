@@ -15,7 +15,7 @@
             <div class="content-wrapper">
                 <div>
                     <p class="site-title">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</p><br />
-                    <div align="right" style="margin-right:5px; margin-bottom:5px">
+                    <div align="right" style="margin-right:5px; margin-bottom:5px; border-bottom:1px solid #E8E8E8;">
                     @if (Session["auth"] == null)
                     { 
                         <span>@Html.ActionLink("Log In", "Login", "User")</span>

@@ -27,9 +27,7 @@ a {
         color: #333;
     }
 
-    a:hover {
-        background-color: #c7d1d6;
-    }
+
 
 header, footer, hgroup,
 nav, section {
@@ -209,19 +207,23 @@ ul#menu {
     background-color: #fff;
 }
 
-    .featured .content-wrapper {
-        background-color: Orange;
-        color: Orange;
-
-    }
-
         .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
+            color: Black;
+            font-family:Helvetica;
+            font-weight:lighter;
+			font-size:32px;
+			
         }
 
-        .featured p {
-            font-size: 1.1em;
-        }
+
+.subtitle{
+	font-family:Helvetica;
+	font-weight:300;
+	font-size:20px;
+	color: #555;
+	text-align:center;
+	margin-top:5px;
+}
 
 /* page titles */
 hgroup.title {
@@ -524,33 +526,30 @@ table {
     margin-top: 0.75em;
     border: 0 none;
     margin-top:50px;
-    width:800px;
+    width:1000px;
 }
 
 th 
 {
-	background-color:#E8E8E8;
-    font-size: 1.2em;
     text-align: center;
-    border: none 0px;
-    padding:10px 20px 10px 20px;
+    border:1px solid #E8E8E8;
+	border-bottom:none;
+    padding:10px 10px 10px 10px;
     color:#585858;
 }
 
     th a {
-        display: block;
-        position: relative;
+
     }
 
-    th a:link, th a:visited, th a:active, th a:hover {
+    th a:link, th a:hover 
+    {
+    	font-size:15px;
         color: #333;
-        font-weight: 600;
+        font-family:Helvetica;
+        font-weight:lighter;
         text-decoration: none;
         padding: 0;
-    }
-
-    th a:hover {
-        color: #000;
     }
 
     th.asc a, th.desc a {
@@ -574,20 +573,90 @@ th
     }
 
 td {
-	padding:10px 20px 10px 20px;
-    text-align:center;
+	padding:20px 10px 20px 10px;
+    text-align:left;
     border: 0 none;
     border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    font-size:20px;
 }
+
+td a:link, td a:visited, td a:active {
+        color: #4183c4;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0;
+    }
+
+td a:hover {
+        text-decoration:underline;
+    }
 
 .gray{
 	color:#989898;	
 }
 
+.taskName{
+	color:#4183c4;
+	}
+
+.normalText{
+	font-size:15px;
+	margin-left:40px;
+	}
+	
+.circle{
+	margin-right:10px;
+	}	
+	
+	
+.wi{
+	border-top:none;
+	}
+	
+.tdRight{
+	text-align:right;
+	padding-right:0px;
+	border-top:none;
+	width:135px;
+	}
+
+
 tr.pager td {
     padding: 0 0.25em 0 0;
 }
 
+.newBtn {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 7px 14px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 12px;
+   font-family: Helvetica;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.newBtn:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.newBtn:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
 
 /********************
 *   Mobile Styles   *

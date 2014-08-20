@@ -84,13 +84,24 @@ namespace TaskControl.Controllers
         //
         // GET: /User/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details(int id = 0, string userName = "")
         {
-            User user = db.Users.Find(id);
+            User user = new User();
+
+            if (!userName.Equals(""))
+            {
+                user = db.Users.FirstOrDefault(u => u.UserName == userName);
+            }
+            else
+            {
+                user = db.Users.Find(id);
+            }
+
             if (user == null)
             {
                 return HttpNotFound();
             }
+            
             return View(user);
         }
 

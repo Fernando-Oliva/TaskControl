@@ -1,79 +1,79 @@
 ﻿@model IEnumerable<TaskControl.Models.Task>
 
 @{
-    ViewBag.Title = "TAREAS PENDIENTES";
+    ViewBag.Title = "Tareas pendientes";
     ViewBag.NotPass = "You cant't pass!!";
 }
 @section featured {
     <section class="featured" >
-        <div class="content-wrapper" style="background-color:Orange">
-            <hgroup  style="height:50px; padding-top:20px;"  class="title" style="background-color:Orange">
+        <div class="content-wrapper">
+            <hgroup  style="height:50px; padding-top:20px;" class="title">
                 <h1>@ViewBag.Title</h1>
+                <p class="subtitle">Gestor de tareas realizadas o pendientes a nivel interno</p>
             </hgroup> 
         </div>
-@if (Session["auth"] != null && Session["auth"].ToString() == "1")
-{
-    <p style="text-align:center">
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
+
 <div style="height:400px">
     <table align="center">
-    <tr> 
-        <th style="width:250px;">
-            @Html.DisplayName("TAREA")
-        </th>
-        <th>
-            @Html.DisplayName("ASIGNADA A")
-        </th>
-        <th>
-            @Html.DisplayName("DO")
-        </th >
-        @if (Session["auth"] != null)
-        {
-        <th>
-            Opciones
-        </th>
-        }
+    @if (Session["auth"] != null && Session["auth"].ToString() == "1")
+    {
+    <tr>
+    <th style="border:none;"></th>
+     <th><span >@Html.ActionLink("Nueva tarea", "Create")</span></th>
     </tr>
-
+    }
 @foreach (var item in Model) {
     <tr>
-        <td align="center">
-            <strong>@Html.DisplayFor(modelItem => item.TaskName)</strong>
-        </td>
-        <td class="gray">
-        @if(string.IsNullOrEmpty(item.Who))
-        {
-            @Html.DisplayName("-- Sin Asignar --")    
-        }
-        else
-        {
-            @Html.DisplayFor(modelItem => item.Who)
-        }
-        </td>
-        @if (item.Do.Equals(true))
+    @if (item.Do.Equals(true))
         {
             <td>
-                <svg height="10" width="25">
+                <svg class="circle" height="13" width="25">
                     <circle cx="15" cy="5" r="10" fill="green" />
                 </svg>
+                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName)</span> / 
+            <strong class="taskName">
+                @if (string.IsNullOrEmpty(item.Who))
+                {
+                    @Html.DisplayName("-- Sin Asignar --")    
+                }
+                else
+                {
+                    @Html.ActionLink(item.Who, "Details", "User", new { userName = item.Who }, null) 
+                }
+            </strong>
+            <br />
+            <br />
+            <span class="normalText">@Html.DisplayFor(modelItem => item.TaskDescription)</span>
             </td>
         }
-        else
-        {
+    else
+    {
             <td>
-                <svg height="10" width="25">
+                <svg class="circle" height="13" width="25">
                     <circle cx="15" cy="5" r="10" fill="red" />
                 </svg>
+                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName)</span> / 
+            <strong class="taskName">
+                @if (string.IsNullOrEmpty(item.Who))
+                {
+                    @Html.DisplayName("-- Sin Asignar --")    
+                }
+                else
+                {
+                    @Html.ActionLink(item.Who, "Details", "User", new { userName = item.Who }, null) 
+                }
+            </strong>
+            <br />
+            <br />
+            <span class="normalText">@Html.DisplayFor(modelItem => item.TaskDescription)</span>
             </td>
-        }
+    }
+
         @if (Session["auth"] != null)
         {
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID }) 
+        <td class="tdRight">
+            <button class="newBtn" onclick="location.href='@Url.Action("Edit", "Home", new { id = item.ID }) '">Edit</button>
+            <button class="newBtn" onclick="location.href='@Url.Action("Edit", "Home", new { id = item.ID }) '">Delete</button>
         </td>
         }
     </tr>
