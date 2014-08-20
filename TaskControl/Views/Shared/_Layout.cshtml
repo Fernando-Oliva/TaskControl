@@ -13,19 +13,18 @@
     <body>
         <header>
             <div class="content-wrapper">
-                <div>
-                    <p class="site-title">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</p><br />
-                    <div align="right" style="margin-right:5px; margin-bottom:5px; border-bottom:1px solid #E8E8E8;">
+                <div align="right" class="loginDiv">
+                    <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</div>
+                    
                     @if (Session["auth"] == null)
                     { 
-                        <span>@Html.ActionLink("Log In", "Login", "User")</span>
+                        <span class="spnLogin">@Html.ActionLink("Log In", "Login", "User")</span>
                     }
                     else
                     {
-                        <span>@Html.ActionLink("Create User", "Create", "User") | </span>
-                        <span>@Html.ActionLink("Log Out", "Logout", "User")</span>
-                    }
-                    </div>
+                        <span class="spnLogin">@Html.ActionLink("Create User", "Create", "User") | </span>
+                        <span class="spnLogin">@Html.ActionLink("Log Out", "Logout", "User")</span>
+                    } 
                 </div>
             </div>
         </header>

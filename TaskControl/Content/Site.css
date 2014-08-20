@@ -1,12 +1,6 @@
-﻿html {
-    background-color: #e2e2e2;
-    margin: 0;
-    padding: 0;
-}
-
+﻿
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
     font-family: Helvetica, Sans-Serif;
@@ -103,20 +97,31 @@ h5, h6 {
 }
 
 
-
-
-
-header .content-wrapper {
-    padding-top: 20px; 
+header{
+	margin-top:20px;	
 }
+
+
 
 footer {
     clear: both;
-    background-color: Orange;
     font-size: .8em;
     height: 100px;
 }
 
+
+.loginDiv{
+	margin-bottom:5px; 
+	border-bottom:1px solid #E8E8E8;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	padding-right:10px;
+}
+
+.spnLogin a{
+	text-decoration:none;
+	font-family:Helvetica;
+}
 
 /* site title
 ----------------------------------------------------------*/
@@ -537,10 +542,6 @@ th
     padding:10px 10px 10px 10px;
     color:#585858;
 }
-
-    th a {
-
-    }
 
     th a:link, th a:hover 
     {
