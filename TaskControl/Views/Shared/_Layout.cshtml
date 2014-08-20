@@ -16,15 +16,11 @@
                 <div align="right" class="loginDiv">
                     <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</div>
                     
-                    @if (Session["auth"] == null)
+                    @if (Session["auth"] != null)
                     { 
-                        <span class="spnLogin">@Html.ActionLink("Log In", "Login", "User")</span>
+                        <span class="spnLogin">@Html.ActionImage("Logout", "User", "../../Images/logout.png", "20", "logout")</span>
                     }
-                    else
-                    {
-                        <span class="spnLogin">@Html.ActionLink("Create User", "Create", "User") | </span>
-                        <span class="spnLogin">@Html.ActionLink("Log Out", "Logout", "User")</span>
-                    } 
+                    
                 </div>
             </div>
         </header>

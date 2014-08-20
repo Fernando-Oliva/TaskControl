@@ -71,7 +71,7 @@ namespace TaskControl.Controllers
         {
             Session["auth"] = null;
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "User");
         }
         //
         // GET: /User/
