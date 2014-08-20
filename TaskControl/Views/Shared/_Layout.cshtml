@@ -28,6 +28,21 @@
                 </div>
             </div>
         </header>
+        @if (Session["auth"] != null)
+        { 
+            <div class="subheader">
+                @if (@Request.RawUrl == "/Home/Index")
+                {
+                   <span class="spnNavMenuActive">@Html.ActionLink("Tareas", "Index", "Home")</span>
+                   <span class="spnNavMenuInactive">@Html.ActionLink("Usuarios", "Index", "User")</span>
+                }
+                else
+                {
+                   <span class="spnNavMenuInactive">@Html.ActionLink("Tareas", "Index", "Home")</span>
+                   <span class="spnNavMenuActive">@Html.ActionLink("Usuarios", "Index", "User")</span>
+                }
+            </div>
+        }
         <div id="body">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">

@@ -97,11 +97,46 @@ h5, h6 {
 }
 
 
-header{
-	margin-top:20px;	
+header
+{
+	padding-top:20px;
+	background-color:whitesmoke;
 }
 
+.subheader{
+	border-bottom:1px solid #E8E8E8;
+	margin-bottom:30px;
+	height:50px;
+	text-align:center;
+}
 
+.spnNavMenuActive{
+	margin-left:10px;
+	margin-right:10px;
+	font-size:14px;
+	font-family:Helvetica;
+}
+
+.spnNavMenuActive a
+{
+	padding-bottom:21px;
+	text-decoration:none;
+	border-bottom: 2px solid #d26911;
+}
+
+.spnNavMenuInactive{
+	margin-left:10px;
+	margin-right:10px;
+	font-size:14px;
+	font-family:Helvetica;
+}
+
+.spnNavMenuInactive a
+{
+	padding-bottom:21px;
+	text-decoration:none;
+	border-bottom: none;
+}
 
 footer {
     clear: both;
@@ -125,7 +160,6 @@ footer {
 	text-decoration:none;
 	font-family:Helvetica;
 }
-
 /* site title
 ----------------------------------------------------------*/
 .site-title {
@@ -144,40 +178,6 @@ footer {
     outline: none;
     text-decoration: none;
 }
-
-
-/* login
-----------------------------------------------------------*/
-#login {
-    display: block;
-    font-size: .85em;
-    margin: 0 0 10px;
-    text-align: right;
-}
-
-    #login a {
-        background-color: #d3dce0;
-        margin-left: 10px;
-        margin-right: 3px;
-        padding: 2px 3px;
-        text-decoration: none;
-    }
-
-    #login a.username {
-        background: none;
-        margin: 0;
-        padding: 0;
-        text-decoration: underline;
-    }
-
-    #login ul {
-        margin: 0;
-    }
-
-    #login li {
-        display: inline;
-        list-style: none;
-    }
 
 
 /* menu
@@ -713,6 +713,22 @@ tr.pager td {
    border-top-color: #1b435e;
    background: #1b435e;
    }
+   
+   
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999;
+}
 
 /********************
 *   Mobile Styles   *
