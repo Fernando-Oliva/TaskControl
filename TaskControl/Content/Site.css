@@ -339,6 +339,16 @@ aside {
     font-weight:lighter;
 	font-size:32px; 
 }
+
+.loginHeader{
+
+	color: Black;
+    font-family:Helvetica;
+    font-weight:lighter;
+	font-size:32px; 
+	margin-bottom:60px;
+}
+
 /* login page */
 #loginForm {
     border-right: solid 2px #c8c8c8;
