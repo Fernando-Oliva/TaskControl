@@ -6,41 +6,59 @@
 
 @if (Session["auth"] != null)
 {
-<h2 style="background-color:Orange; padding-bottom:10px; padding-top:10px; margin-bottom:20px;" >Users</h2>
+    
+<section class="featured" >    
+<h2 class="userHeader">Usuarios</h2>
+<p class="subtitle">Listado de usuarios existentes en el sistema</p>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<div style="height:400px">
-<table align="center">
-    <tr>
-        <th>
-            @Html.DisplayName("USER")
-        </th>
-        <th>
-            @Html.DisplayName("PASSWORD")
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model)
-{
+<div>
+<table class="userTable" align="center">
+@if (Session["auth"] != null && Session["auth"].ToString() == "1")
+    {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-        </td>
+    <th style="border:none;"></th>
+     <th><span>@Html.ActionLink("Nuevo usuario", "Create")</span></th>
     </tr>
-}
+    }
+    
+
+    @{ string cl = "";
+       string tdR = "";
+       int i = 0;}
+@foreach (var item in Model) {
+    i++;
+    <tr>
+    @if(i==Model.Count())
+    {
+        cl = "noBorder";
+        tdR = "tdRightNoBorder";
+    }
+    else
+    {
+        cl = "yesBorder";
+        tdR = "tdRightYesBorder";
+    }
+    <td class="@cl">
+        <span class="taskName">User name: <strong>@Html.DisplayFor(modelItem => item.UserName)</strong></span>
+        
+        <br />
+        <br />
+        <span class="normalText">Password: @Html.DisplayFor(modelItem => item.Password)</span>
+    </td>
+        @if (Session["auth"] != null)
+        {
+        <td class="@tdR">
+            <button class="newBtn" onclick="location.href='@Url.Action("Edit", "User", new { id = item.ID }) '">Edit</button>
+            <button class="newBtn" onclick="location.href='@Url.Action("Delete", "User", new { id = item.ID }) '">Delete</button>
+        </td>
+        }
+    </tr>
+    }
 
 </table>
 </div>
+</section>
 }
 else
 {

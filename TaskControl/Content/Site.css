@@ -21,7 +21,10 @@ a {
         color: #333;
     }
 
-
+.featured
+	{
+		border-top:1px solid #E8E8E8;
+	}
 
 header, footer, hgroup,
 nav, section {
@@ -104,8 +107,7 @@ header
 }
 
 .subheader{
-	border-bottom:1px solid #E8E8E8;
-	margin-bottom:30px;
+	margin-bottom:-11px;
 	height:50px;
 	text-align:center;
 }
@@ -330,6 +332,13 @@ aside {
     font-weight: 700;
 }
 
+.userHeader{
+
+	color: Black;
+    font-family:Helvetica;
+    font-weight:lighter;
+	font-size:32px; 
+}
 /* login page */
 #loginForm {
     border-right: solid 2px #c8c8c8;
@@ -535,6 +544,10 @@ table {
     border: 0 none;
     margin-top:50px;
     width:1000px;
+}
+
+.userTable{
+	width:800px;
 }
 
 th 
@@ -808,6 +821,7 @@ tr.pager td {
         padding-left: 10px;
     }
 
+	
     .featured .content-wrapper {
         padding: 10px;
     }
