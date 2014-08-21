@@ -121,8 +121,16 @@ namespace TaskControl.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
-                db.SaveChanges();
+                try
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    string error = ex.Message;
+                }
+
                 return RedirectToAction("Index");
             }
 

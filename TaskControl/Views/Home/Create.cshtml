@@ -67,6 +67,13 @@
                 @Html.ValidationMessageFor(model => model.Do)
             </div>
         </div>
+        <br />
+        <div class="divBlock">
+            <fieldset class="fields">
+                <legend style="display:block;">Enviar email?</legend>
+                <div style="margin-top:25px;">Enviar @Html.CheckBox("sendEmail")</div>
+            </fieldset>
+        </div>
 
         <br />
         <div align="center">

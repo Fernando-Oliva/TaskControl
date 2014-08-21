@@ -9,7 +9,8 @@ namespace TaskControl.Migrations.UserDBContext
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             MigrationsDirectory = @"Migrations\UserDBContext";
         }
 

@@ -59,10 +59,12 @@ namespace TaskControl.Controllers
         // POST: /Task/Create
 
         [HttpPost]
-        public ActionResult Create(Task task)
+        public ActionResult Create(Task task, bool sendEmail)
         {
             if (ModelState.IsValid)
             {
+                //var val = Request.Form["sendEmail"];
+
                 db.Tasks.Add(task);
                 db.SaveChanges();
                 return RedirectToAction("Index");

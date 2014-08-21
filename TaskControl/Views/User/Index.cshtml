@@ -47,7 +47,7 @@
         <img src="../../Images/lock.png" width="20" class="imgLock"/>
         <span class="normalText">@Html.DisplayFor(modelItem => item.Password)</span>
         <img src="../../Images/email.png" width="30" class="imgEmail"/>
-        <span class="emailText">email</span>
+        <span class="emailText">@Html.DisplayFor(modelItem => item.UserName)</span>
     </td>
         @if (Session["auth"] != null)
         {

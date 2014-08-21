@@ -14,11 +14,11 @@
         <header>
             <div class="content-wrapper">
                 <div align="right" class="loginDiv">
-                    <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index")</div>
+                    <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index", "Logo")</div>
                     
                     @if (Session["auth"] != null)
                     { 
-                        <span class="spnLogin">@Html.ActionImage("Logout", "User", "../../Images/logout.png", "20", "logout")</span>
+                        <span class="spnLogin">@Html.ActionImage("Logout", "User", "../../Images/logout.png", "20", "logout", "Logout")</span>
                     }
                     
                 </div>
@@ -27,7 +27,7 @@
         @if (Session["auth"] != null)
         { 
             <div class="subheader">
-                @if (@Request.RawUrl == "/Home/Index")
+                @if (@Request.RawUrl.Contains("Home"))
                 {
                    <span class="spnNavMenuActive">@Html.ActionLink("Tareas", "Index", "Home")</span>
                    <span class="spnNavMenuInactive">@Html.ActionLink("Usuarios", "Index", "User")</span>

@@ -14,13 +14,14 @@ namespace TaskControl.Helpers
         /// <param name="width"></param>
         /// <param name="alt"></param>
         /// <returns></returns>
-        public static MvcHtmlString ActionImage(this HtmlHelper html, string action, string controller, string imagePath, string width, string alt)
+        public static MvcHtmlString ActionImage(this HtmlHelper html, string action, string controller, string imagePath, string width, string alt, string title)
         {
             var url = new UrlHelper(html.ViewContext.RequestContext);
 
             // build the <img> tag
             var imgBuilder = new TagBuilder("img");
             imgBuilder.MergeAttribute("src", url.Content(imagePath));
+            imgBuilder.MergeAttribute("title", title);
             imgBuilder.MergeAttribute("alt", alt);
             imgBuilder.MergeAttribute("width", width + "px");
             
