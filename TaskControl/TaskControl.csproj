@@ -239,8 +239,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\email.png" />
+    <Content Include="Images\lock.png" />
     <Content Include="Images\logo-seguros-broker.png" />
     <Content Include="Images\logout.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\usercard.png" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />

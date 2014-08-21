@@ -40,11 +40,14 @@
         tdR = "tdRightYesBorder";
     }
     <td class="@cl">
-        <span class="taskName">User name: <strong>@Html.DisplayFor(modelItem => item.UserName)</strong></span>
-        
+        <img src="../../Images/usercard.png" width="35" class="imgUser"/>
+        <span class="taskName"><strong>@Html.DisplayFor(modelItem => item.UserName)</strong></span>     
         <br />
         <br />
-        <span class="normalText">Password: @Html.DisplayFor(modelItem => item.Password)</span>
+        <img src="../../Images/lock.png" width="20" class="imgLock"/>
+        <span class="normalText">@Html.DisplayFor(modelItem => item.Password)</span>
+        <img src="../../Images/email.png" width="30" class="imgEmail"/>
+        <span class="emailText">email</span>
     </td>
         @if (Session["auth"] != null)
         {

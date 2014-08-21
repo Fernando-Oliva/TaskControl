@@ -332,6 +332,23 @@ aside {
     font-weight: 700;
 }
 
+.imgUser{
+	vertical-align:middle;
+	margin-right:10px;
+}
+
+.imgLock
+{
+	vertical-align:middle;
+	margin-left:40px;
+}
+
+.imgEmail
+{
+	vertical-align:middle;
+	margin-left:100px;
+}
+
 .userHeader{
 
 	color: Black;
@@ -341,12 +358,15 @@ aside {
 }
 
 .loginHeader{
-
+	border-bottom: 1px solid #E8E8E8;
+	padding-bottom:21px;
 	color: Black;
     font-family:Helvetica;
     font-weight:lighter;
 	font-size:32px; 
 	margin-bottom:60px;
+	margin-left:700px;
+	margin-right:700px;
 }
 
 /* login page */
@@ -634,9 +654,13 @@ td a:hover {
 
 .normalText{
 	font-size:15px;
-	margin-left:40px;
 	}
 	
+.emailText
+{
+	font-size:15px;
+}
+
 .circle{
 	margin-right:10px;
 	}	
