@@ -7,59 +7,70 @@
 
 @if (Session["auth"] != null && Session["auth"].ToString() == "1")
 {
-<div class="content-wrapper" style="background-color:Orange; margin-bottom:10px; padding-bottom:10px;">
-    <h2>Crear una nueva tarea</h2>
+<div class="featured">
+<div class="content-wrapper" style="margin-bottom:10px; padding-bottom:10px;">
+    <h2 class="newTaskH2">Nueva tarea</h2>
 </div>
 
-using (Html.BeginForm())
+@using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Task</legend>
 
-        <div class="editor-label">
-            @Html.Label("Tarea")
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Tarea", new { @class = "label2"})
+            </div>
+
+            <div class="editor-field2">
+                @Html.TextBoxFor(model => model.TaskName, new { @class = "textB"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.TaskName)
+            </div>
         </div>
+        <div class="divUnder"></div>
         <br />
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TaskName)
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Descripción de la Tarea", new { @class = "label2" })
+            </div>
+
+            <div class="editor-field2">
+                @Html.TextAreaFor(model => model.TaskDescription, new { @class = "multi"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.TaskDescription)
+            </div>
         </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.TaskName)
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Asignada a", new { @class = "label2" })
+            </div>
+            <div class="editor-field2">
+                @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"], new { @class = "drop2"})
+                @Html.ValidationMessageFor(model => model.Who)
+            </div>
+        </div>
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2" style="text-align:center">
+                @Html.Label("Realizada", new { @class = "label2" })
+            </div>
+            <div class="editor-field2"  style="text-align:center">
+                @Html.EditorFor(model => model.Do)
+                @Html.ValidationMessageFor(model => model.Do)
+            </div>
         </div>
 
         <br />
-        <div class="editor-label">
-            @Html.Label("Descripción de la Tarea")
-        </div>
-        <br />
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TaskDescription)
-        </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.TaskDescription)
-        </div>
-        <br />
-        <div class="editor-label">
-            @Html.Label("Asignada a")
-        </div>
-        <br />
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"])
-            @Html.ValidationMessageFor(model => model.Who)
-        </div>
-        <br />
-        <div class="editor-label">
-            @Html.Label("Realizada")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Do)
-            @Html.ValidationMessageFor(model => model.Do)
-        </div>
-        <br />
         <div align="center">
-            <input type="submit" value="Create" />
+            <input type="submit" value="Create" class="newBtn"/>
         </div>
     </fieldset>
 }
@@ -67,6 +78,7 @@ using (Html.BeginForm())
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+    </div>
 }
 else
 {

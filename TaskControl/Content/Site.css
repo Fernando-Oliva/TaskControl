@@ -124,6 +124,7 @@ header
 	padding-bottom:21px;
 	text-decoration:none;
 	border-bottom: 2px solid #d26911;
+	font-weight:bold;
 }
 
 .spnNavMenuInactive{
@@ -138,6 +139,7 @@ header
 	padding-bottom:21px;
 	text-decoration:none;
 	border-bottom: none;
+	font-weight:normal;
 }
 
 footer {
@@ -332,6 +334,45 @@ aside {
     font-weight: 700;
 }
 
+.label2
+{
+	font-family:Helvetica;
+	font-weight:lighter;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.newTaskH2
+{
+	font-family:Helvetica;
+	font-weight:lighter;
+	margin-top:25px;
+	margin-bottom:30px;
+}
+
+.textB
+{
+	width:300px;
+	border-radius: 7px; 
+	font-size:1.2em;
+}
+
+.multi
+{
+	width:300px;
+	border-radius: 7px; 
+	font-size:1.2em;
+	
+}
+
+
+.drop2
+{
+	width:300px;
+	font-size:1.2em;
+	border:1px solid #e2e2e2;
+	border-radius: 7px; 
+}
+
 .imgUser{
 	vertical-align:middle;
 	margin-right:10px;
@@ -340,13 +381,41 @@ aside {
 .imgLock
 {
 	vertical-align:middle;
-	margin-left:40px;
+	margin-left:50px;
+	opacity:0.4;
 }
+
+.editor-label2
+{
+	font-family:Helvetica;
+	font-weight:lighter;
+	text-align:left;
+}
+
+.editor-field2
+{
+	text-align:left;
+}
+
+.divBlock
+{
+	margin:0 auto 0 auto; 
+	width:310px;
+}
+
+.divUnder
+{
+	margin:10px auto 10px auto;
+	width:500px;
+	border-bottom: 1px solid #E8E8E8;
+}
+
 
 .imgEmail
 {
 	vertical-align:middle;
 	margin-left:100px;
+	opacity:0.4;
 }
 
 .userHeader{
@@ -656,6 +725,11 @@ td a:hover {
 	font-size:15px;
 	}
 	
+.normalTextDes{
+	font-size:15px;
+	margin-left:40px;
+}
+		
 .emailText
 {
 	font-size:15px;
