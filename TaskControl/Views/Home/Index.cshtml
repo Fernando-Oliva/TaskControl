@@ -21,15 +21,29 @@
     @if (Session["auth"] != null && Session["auth"].ToString() == "1")
     {
     <tr>
-    <th style="border:none;"></th>
-     <th><span>@Html.ActionLink("Nueva tarea", "Create")</span></th>
+    <th style="border:none; text-align:left;" >Order by: 
+    
+    @if ( ViewData["DoDate"] == "1")
+    {
+        <span class="orderSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
+        <span class="orderUnSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span>
+    }
+    else
+    {
+        <span class="orderUnSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
+        <span class="orderSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span>
+    }
+    
+    </th>
+    <th><span>@Html.ActionLink("Nueva tarea", "Create")</span></th>
     </tr>
     }
     
 
     @{ string cl = "";
        string tdR = "";
-       int i = 0;}
+       int i = 0;
+       }
 @foreach (var item in Model)
 {
     i++;

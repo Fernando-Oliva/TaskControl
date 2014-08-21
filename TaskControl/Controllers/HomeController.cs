@@ -13,16 +13,77 @@ using TaskControl.Helpers;
 
 namespace TaskControl.Controllers
 {
+    public static class Counters
+    {
+        public static int countDo { get; set; }
+        public static int countDate { get; set; }
+    }
     public class HomeController : Controller
     {
         private TaskDBContext db = new TaskDBContext();
         private UserDBContext db2 = new UserDBContext();
 
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             ViewBag.Message = "Herramientas SegurosBroker.com";
 
-            return View(db.Tasks.ToList());
+            var task = from t in db.Tasks
+                           select t;
+
+            switch (sortOrder)
+            {
+                case "Do":
+
+                    SetOrderDo();
+
+                    Counters.countDo++;
+
+                    if (Counters.countDo % 2 == 0)
+                    {
+                        task = task.OrderByDescending(s => s.Do);
+                    }
+                    else
+                    {
+                        task = task.OrderBy(s => s.Do);
+                    }
+
+                    break;
+                case "Date":
+
+                    SetOrderDate();
+
+                    Counters.countDate++;
+
+                    if (Counters.countDate % 2 == 0)
+                    {
+                        task = task.OrderByDescending(s => s.Date);
+                    }
+                    else
+                    {
+                        task = task.OrderBy(s => s.Date);
+                    }
+
+                    break;
+                default:
+
+                    SetOrderDo();
+
+                    task = task.OrderBy(s => s.Do);
+                    break;
+
+            }
+
+            return View(task.ToList());
+        }
+
+        private void SetOrderDo()
+        {
+            ViewData["DoDate"] = "1";
+        }
+
+        private void SetOrderDate()
+        {
+            ViewData["DoDate"] = "0";
         }
 
         public ActionResult About()
@@ -71,6 +132,8 @@ namespace TaskControl.Controllers
                 {
                     Utilities.SendEmail(task.Who, task.TaskName, task.TaskDescription);
                 }
+
+                task.Date = DateTime.Now;
 
                 db.Tasks.Add(task);
                 db.SaveChanges();

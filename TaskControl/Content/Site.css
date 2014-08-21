@@ -136,6 +136,15 @@ header
 	font-weight:bold;
 }
 
+.orderSelected
+{
+	border-bottom:2px solid #d26911;
+}
+.orderUnSelected
+{
+	border-bottom:none;
+}
+
 .spnNavMenuInactive{
 	margin-left:10px;
 	margin-right:10px;

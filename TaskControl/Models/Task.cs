@@ -24,6 +24,8 @@ namespace TaskControl.Models
         public string Who { get; set; }
 
         public bool Do { get; set; }
+
+        public DateTime Date { get; set; }
     }
 
     public class TaskDBContext : DbContext
