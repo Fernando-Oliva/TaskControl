@@ -173,6 +173,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LinkExtensions.cs" />
+    <Compile Include="Helpers\Utilities.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\UserDBContext\Configuration.cs" />
     <Compile Include="Models\Task.cs" />

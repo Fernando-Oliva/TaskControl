@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using TaskControl.Models;
 using System.Data;
 using System.Data.Entity;
+using System.Net.Mail;
+using System.Net;
+
+using TaskControl.Helpers;
 
 namespace TaskControl.Controllers
 {
@@ -63,7 +67,10 @@ namespace TaskControl.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var val = Request.Form["sendEmail"];
+                if (sendEmail)
+                {
+                    Utilities.SendEmail(task.Who, task.TaskName, task.TaskDescription);
+                }
 
                 db.Tasks.Add(task);
                 db.SaveChanges();
@@ -137,5 +144,7 @@ namespace TaskControl.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        
     }
 }
