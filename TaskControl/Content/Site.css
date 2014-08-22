@@ -1,4 +1,22 @@
-﻿
+﻿.appname
+{
+	
+	text-align:left;
+	margin-left:10px;
+}
+
+.applinkname
+{
+	font-size:50px;
+	font-family:Hug Me Tight;
+	text-decoration:none;
+}
+
+.subappname
+{
+	font-family:Hug Me Tight;
+}
+
 body {
     background-color: #fff;
     color: #333;

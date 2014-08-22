@@ -14,7 +14,8 @@
         <header>
             <div class="content-wrapper">
                 <div align="right" class="loginDiv">
-                    <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index", "Logo")</div>
+                    
+                    <div class="appname">@Html.ActionLink("*gawain", "Index", "Home", new { @class = "applinkname"})<span class="subappname">(esto es <a href="http://es.wikipedia.org/wiki/Idioma_tagalo" target="_blank">Tagalo</a>)</span></div>
                     
                     @if (Session["auth"] != null)
                     { 
@@ -48,7 +49,7 @@
         <footer>
             <div class="content-wrapper" >
                 <div style="text-align:center; padding-top:10px;">
-                    &copy; @DateTime.Now.Year - <strong>Seguros</strong>broker.com
+                    &copy; @DateTime.Now.Year - <span style="font-family:Courier; font-size:15px;">{be<strong>code</strong>}</span>
                 </div>
             </div>
         </footer>
