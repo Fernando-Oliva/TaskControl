@@ -869,6 +869,15 @@ tr.pager td {
     color:    #999;
 }
 
+.backlink
+{
+	padding-bottom:33px;
+	padding-top:40px;
+	text-decoration:none;
+	border-bottom: 2px solid #d26911;
+	font-weight:bold;
+}
+
 /* Priority Zone */
 .floating
 {

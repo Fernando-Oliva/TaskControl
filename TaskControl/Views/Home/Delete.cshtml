@@ -13,8 +13,8 @@
     <p>
         <button class="newBtn" onclick="location.href='@Url.Action("Delete")'">Delete</button>
     </p>
-    <p style="margin-top:40px;">
-        @Html.ActionLink("Back to List", "Index") 
-    </p>
+    <div style="margin-top:40px;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "backlink" }) 
+    </div>
 }
 </section>

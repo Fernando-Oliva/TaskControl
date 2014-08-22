@@ -111,29 +111,6 @@ namespace TaskControl.Controllers
             ViewData["DoDate"] = "2";
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Página de descripción de la aplicación.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Página de contacto.";
-
-            return View();
-        }
-
-        public ActionResult Details(int id = 0)
-        {
-            Task task = db.Tasks.Find(id);
-            if (task == null)
-            {
-                return HttpNotFound();
-            }
-            return View(task);
-        }
 
         public ActionResult Create()
         {
@@ -193,10 +170,17 @@ namespace TaskControl.Controllers
         // POST: /Task/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Task task)
+        public ActionResult Edit(Task task, bool sendEmail)
         {
             if (ModelState.IsValid)
             {
+                if (sendEmail)
+                {
+                    Utilities.SendEmail(task.Who, task.TaskName, task.TaskDescription);
+                }
+
+                task.Priority = Convert.ToInt32(Request.Form["rating"]);
+                task.Date = DateTime.Now;
                 db.Entry(task).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

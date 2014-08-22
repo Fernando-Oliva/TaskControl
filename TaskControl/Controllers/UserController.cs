@@ -81,30 +81,7 @@ namespace TaskControl.Controllers
             return View(db.Users.ToList());
         }
 
-        //
-        // GET: /User/Details/5
-
-        public ActionResult Details(int id = 0, string userName = "")
-        {
-            User user = new User();
-
-            if (!userName.Equals(""))
-            {
-                user = db.Users.FirstOrDefault(u => u.UserName == userName);
-            }
-            else
-            {
-                user = db.Users.Find(id);
-            }
-
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            
-            return View(user);
-        }
-
+ 
         //
         // GET: /User/Create
 
