@@ -17,6 +17,7 @@ namespace TaskControl.Controllers
     {
         public static int countDo { get; set; }
         public static int countDate { get; set; }
+        public static int countPriority { get; set; }
     }
 
     public class HomeController : Controller
@@ -65,6 +66,22 @@ namespace TaskControl.Controllers
                     }
 
                     break;
+                case "Priority":
+
+                    SetOrderPriority();
+
+                    Counters.countPriority++;
+
+                    if (Counters.countPriority % 2 == 0)
+                    {
+                        task = task.OrderBy(s => s.Priority);
+                    }
+                    else
+                    {
+                        task = task.OrderByDescending(s => s.Priority);
+                    }
+
+                    break;
                 default:
 
                     SetOrderDo();
@@ -77,14 +94,21 @@ namespace TaskControl.Controllers
             return View(task.ToList());
         }
 
+        
+
+        private void SetOrderDate()
+        {
+            ViewData["DoDate"] = "0";
+        }
+
         private void SetOrderDo()
         {
             ViewData["DoDate"] = "1";
         }
 
-        private void SetOrderDate()
+        private void SetOrderPriority()
         {
-            ViewData["DoDate"] = "0";
+            ViewData["DoDate"] = "2";
         }
 
         public ActionResult About()

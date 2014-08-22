@@ -26,12 +26,20 @@
     @if (ViewData["DoDate"] == "1")
     {
         <span class="orderSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
-        <span class="orderUnSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span>
+        <span class="orderUnSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span> <span> | </span> 
+        <span class="orderUnSelected">@Html.ActionLink("Priority", "Index", new { sortOrder = "Priority" })</span>
+    }
+    else if (ViewData["DoDate"] == "2")
+    {
+        <span class="orderUnSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
+        <span class="orderUnSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span> <span> | </span> 
+        <span class="orderSelected">@Html.ActionLink("Priority", "Index", new { sortOrder = "Priority" })</span>
     }
     else
     {
         <span class="orderUnSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
-        <span class="orderSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span>
+        <span class="orderSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span> <span> | </span> 
+        <span class="orderUnSelected">@Html.ActionLink("Priority", "Index", new { sortOrder = "Priority" })</span>
     }
     
     </th>
@@ -80,10 +88,10 @@
             <br />
             <span class="normalTextDes">@Html.DisplayFor(modelItem => item.TaskDescription) |   Prioridad:   </span>
         
-            for (int a = 0; a < item.Priority; a++)
-            {
+                for (int a = 0; a < item.Priority; a++)
+                {
                  <img src="../../Images/starY.png" width="25px" class="starimg"/>
-            }
+                }
 
     }
     else
