@@ -26,6 +26,8 @@ namespace TaskControl.Models
         public bool Do { get; set; }
 
         public DateTime Date { get; set; }
+
+        public int Priority { get; set; }
     }
 
     public class TaskDBContext : DbContext

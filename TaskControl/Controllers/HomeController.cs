@@ -18,6 +18,7 @@ namespace TaskControl.Controllers
         public static int countDo { get; set; }
         public static int countDate { get; set; }
     }
+
     public class HomeController : Controller
     {
         private TaskDBContext db = new TaskDBContext();

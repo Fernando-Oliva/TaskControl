@@ -70,8 +70,31 @@
         <br />
         <div class="divBlock">
             <fieldset class="fields">
-                <legend style="display:block;">Enviar email?</legend>
-                <div style="margin-top:25px;">Enviar @Html.CheckBox("sendEmail")</div>
+                <legend style="display:block;">Otras opciones</legend>
+                <div style="margin-top:25px; margin-bottom:15px;">Enviar email? @Html.CheckBox("sendEmail")</div>
+                
+                <!-- Priority zone -->
+                <span>Prioridad </span>
+                <div class="rating-wrap">
+                    <div class="radio-wrap">
+                        <input type="radio" name="rating" value="1"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="2"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="3"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="4"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="5"></input>
+                        <div class="rating-fill"></div>
+                    </div>
+                    <div class="rating-blank"></div>
+                </div>
+                <!-- ============= -->
             </fieldset>
         </div>
 
