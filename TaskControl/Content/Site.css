@@ -870,7 +870,20 @@ tr.pager td {
 }
 
 /* Priority Zone */
+.floating
+{
+	position:relative;
+	margin-right:10px;
+	float:right;
+}
 
+.floating2
+{
+	position:relative;
+	margin-right:10px;
+	float:left;
+	padding-top:5px;
+}
 /* Wrappers */
 .rating-wrap{
     width:150px;
@@ -879,6 +892,13 @@ tr.pager td {
     margin: 7px auto 0 auto;
 }
  
+.rating-wrap2{
+    width:150px;
+    height:25px;
+    position:relative;
+    margin-right:20px;
+    float:right;
+}
  
 .radio-wrap{
     width:100%;

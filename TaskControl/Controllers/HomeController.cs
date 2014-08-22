@@ -134,6 +134,8 @@ namespace TaskControl.Controllers
                     Utilities.SendEmail(task.Who, task.TaskName, task.TaskDescription);
                 }
 
+                task.Priority = Convert.ToInt32(Request.Form["rating"]);
+
                 task.Date = DateTime.Now;
 
                 db.Tasks.Add(task);
