@@ -8,6 +8,7 @@
 .back
 {
 	background-image: url("../../Images/loginBack.jpg");
+	height:1000px;
 }
 .applinkname
 {
@@ -845,7 +846,7 @@ tr.pager td {
 .loginButton
 {
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 400px;
 }
 
 .loginButton {
