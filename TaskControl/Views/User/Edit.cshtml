@@ -1,45 +1,65 @@
 ﻿@model TaskControl.Models.User
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
+    ViewBag.NotPass = "You can't pass!!";
 }
 
-<h2>Edit</h2>
+@if (Session["auth"] != null && Session["auth"].ToString() == "1")
+{
+<div class="featured">
+<h2 style="padding-top:10px; padding-bottom:10px; margin:20px;">Editar</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>User</legend>
 
-        @Html.HiddenFor(model => model.ID)
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Email", new { @class = "label2"})
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserName)
+            <div class="editor-field2">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "textB"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserName)
-            @Html.ValidationMessageFor(model => model.UserName)
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Password", new { @class = "label2" })
+            </div>
+
+            <div class="editor-field2">
+                @Html.TextBoxFor(model => model.Password, new { @class = "textB"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Password)
+        <br />
+        <div align="center">
+            <input type="submit" value="Save" class="newBtn"/>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Password)
-            @Html.ValidationMessageFor(model => model.Password)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
     </fieldset>
 }
-
-<div>
+<br />
+<div align="center">
     @Html.ActionLink("Back to List", "Index")
 </div>
-
+</div>
+}
+else
+{
+    <h1>@ViewBag.NotPass</h1> 
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,71 +1,119 @@
 ﻿@model TaskControl.Models.Task
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Crear una nueva tarea";
+    ViewBag.NotPass = "You can't pass!!";
 }
 
-<h2 style="background-color:Orange; padding-bottom:10px; padding-top:10px; margin-bottom:20px;">Edit</h2>
+@if (Session["auth"] != null && Session["auth"].ToString() == "1")
+{
+<div class="featured">
+<div class="content-wrapper" style="margin-bottom:10px; padding-bottom:10px;">
+    <h2 class="newTaskH2">Editar</h2>
+</div>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
-    <fieldset style="height:500px">
+    <fieldset>
         <legend>Task</legend>
 
-        @Html.HiddenFor(model => model.ID)
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Tarea", new { @class = "label2"})
+            </div>
 
-        <div class="editor-label">
-            @Html.Label("Tarea")
+            <div class="editor-field2">
+                @Html.TextBoxFor(model => model.TaskName, new { @class = "textB"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.TaskName)
+            </div>
+        </div>
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Descripción de la Tarea", new { @class = "label2" })
+            </div>
+
+            <div class="editor-field2">
+                @Html.TextAreaFor(model => model.TaskDescription, new { @class = "multi"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.TaskDescription)
+            </div>
+        </div>
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2">
+                @Html.Label("Asignada a", new { @class = "label2" })
+            </div>
+            <div class="editor-field2">
+                @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"], new { @class = "drop2"})
+                @Html.ValidationMessageFor(model => model.Who)
+            </div>
+        </div>
+        <div class="divUnder"></div>
+        <br />
+        <div class="divBlock">
+            <div class="editor-label2" style="text-align:center">
+                @Html.Label("Realizada", new { @class = "label2" })
+            </div>
+            <div class="editor-field2"  style="text-align:center">
+                @Html.EditorFor(model => model.Do)
+                @Html.ValidationMessageFor(model => model.Do)
+            </div>
         </div>
         <br />
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TaskName)
-        </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.TaskName)
+        <div class="divBlock">
+            <fieldset class="fields">
+                <legend style="display:block;">Otras opciones</legend>
+                <div style="margin-top:25px; margin-bottom:15px;">Enviar email? @Html.CheckBox("sendEmail")</div>
+                
+                <!-- Priority zone -->
+                <span>Prioridad </span>
+                <div class="rating-wrap">
+                    <div class="radio-wrap">
+                        <input type="radio" name="rating" value="1"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="2"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="3"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="4"></input>
+                        <div class="rating-fill"></div>
+ 
+                        <input type="radio" name="rating" value="5"></input>
+                        <div class="rating-fill"></div>
+                    </div>
+                    <div class="rating-blank"></div>
+                </div>
+                <!-- ============= -->
+            </fieldset>
         </div>
 
-        <br />
-        <div class="editor-label">
-            @Html.Label("Descripción de la Tarea")
-        </div>
-        <br />
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TaskDescription)
-        </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.TaskDescription)
-        </div>
-        <br />
-        <div class="editor-label">
-            @Html.Label("Asignada a")
-        </div>
-        <br />
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Who, (SelectList)ViewData["Users"])
-            @Html.ValidationMessageFor(model => model.Who)
-        </div>
-        <br />
-        <div class="editor-label">
-            @Html.Label("Realizada")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Do)
-            @Html.ValidationMessageFor(model => model.Do)
-        </div>
         <br />
         <div align="center">
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+            <input type="submit" value="Save" class="newBtn"/>
         </div>
     </fieldset>
 }
-
+<br />
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
+    </div>
+}
+else
+{
+    <h1>@ViewBag.NotPass</h1> 
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

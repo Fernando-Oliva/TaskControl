@@ -4,29 +4,17 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<section class="featured" >
+<h2 style="padding-bottom:10px; padding-top:10px; margin-bottom:40px; font-family:Helvetica; font-weight:lighter">Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>User</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Password)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Password)
-    </div>
-</fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <button class="newBtn" onclick="location.href='@Url.Action("Delete")'">Delete</button>
+    </p>
+    <p style="margin-top:40px;">
+        @Html.ActionLink("Back to List", "Index") 
     </p>
 }
+</section>
