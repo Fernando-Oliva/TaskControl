@@ -247,6 +247,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Images\loginBack.jpg" />
     <Content Include="Images\email.png" />
     <Content Include="Images\lock.png" />
     <Content Include="Images\logo-seguros-broker.png" />

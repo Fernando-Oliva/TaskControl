@@ -5,6 +5,10 @@
 	margin-left:10px;
 }
 
+.back
+{
+	background-image: url("../../Images/loginBack.jpg");
+}
 .applinkname
 {
 	font-size:50px;
