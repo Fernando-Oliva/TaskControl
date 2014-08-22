@@ -94,8 +94,6 @@ namespace TaskControl.Controllers
             return View(task.ToList());
         }
 
-        
-
         private void SetOrderDate()
         {
             ViewData["DoDate"] = "0";
