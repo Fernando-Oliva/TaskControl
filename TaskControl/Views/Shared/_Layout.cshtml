@@ -21,6 +21,10 @@
                     { 
                         <span class="spnLogin">@Html.ActionImage("Logout", "User", "../../Images/logout.png", "20", "logout", "Logout")</span>
                     }
+                    else if (Session["auth"] == null)
+                    {
+                         <span class="spnLogin">@Html.ActionLink("Register", "Create", "User")</span>
+                    }
                     
                 </div>
             </div>

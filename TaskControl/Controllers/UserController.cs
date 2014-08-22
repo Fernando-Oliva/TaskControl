@@ -108,7 +108,14 @@ namespace TaskControl.Controllers
                     string error = ex.Message;
                 }
 
-                return RedirectToAction("Index");
+                if (Session["auth"] == null)
+                {
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(user);
