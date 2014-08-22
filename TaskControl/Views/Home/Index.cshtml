@@ -23,7 +23,7 @@
     <tr>
     <th style="border:none; text-align:left;" >Order by: 
     
-    @if ( ViewData["DoDate"] == "1")
+    @if (ViewData["DoDate"] == "1")
     {
         <span class="orderSelected">@Html.ActionLink("Do", "Index", new { sortOrder = "Do" })</span> <span> | </span> 
         <span class="orderUnSelected">@Html.ActionLink("Date", "Index", new { sortOrder = "Date" })</span>
@@ -78,8 +78,13 @@
             </strong>
             <br />
             <br />
-            <span class="normalTextDes">@Html.DisplayFor(modelItem => item.TaskDescription)</span>
-           
+            <span class="normalTextDes">@Html.DisplayFor(modelItem => item.TaskDescription) |   Prioridad:   </span>
+        
+            for (int a = 0; a < item.Priority; a++)
+            {
+                 <img src="../../Images/starY.png" width="25px" class="starimg"/>
+            }
+
     }
     else
     {
@@ -100,40 +105,14 @@
             </strong>
             <br />
             <br />
-            <span class="normalTextDes">@Html.DisplayFor(modelItem => item.TaskDescription) | </span>
-        <div class="floating">
-            <div  class="floating2">Priodridad: </div>
-            <div class="rating-wrap2">
-                    <div class="radio-wrap">
-                    @if (item.Priority.Equals(1))
-                    {
-                        <input type="radio" name="rating" value="1" checked=checked></input>
-                        <div class="rating-fill"></div>
-                    }
-                    else if (item.Priority.Equals(2))
-                    {
-                        <input type="radio" name="rating" value="2" checked=checked></input>
-                        <div class="rating-fill"></div>
-                    }
-                    else if (item.Priority.Equals(3))
-                    {
-                        <input type="radio" name="rating" value="3" checked=checked></input>
-                        <div class="rating-fill"></div>
-                    }
-                    else if (item.Priority.Equals(4))
-                    {
-                        <input type="radio" name="rating" value="4" checked=checked></input>
-                        <div class="rating-fill"></div>
-                    }
-                    else if (item.Priority.Equals(5))
-                    {
-                        <input type="radio" name="rating" value="5" checked=checked></input>
-                        <div class="rating-fill"></div>
-                    }
-                    </div>
-                    <div class="rating-blank"></div>
-                </div>
-            </div>
+            <span class="normalTextDes">@Html.DisplayFor(modelItem => item.TaskDescription) |   Prioridad:   </span>
+
+            
+                for (int a = 0; a < item.Priority; a++)
+                {
+                 <img src="../../Images/starY.png" width="25px" class="starimg"/>
+                }
+
     }
     </td>
         @if (Session["auth"] != null)

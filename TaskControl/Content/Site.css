@@ -928,6 +928,10 @@ input[type=radio] {
     z-index:1;
 }
  
+.starimg
+{
+	vertical-align:middle;
+}
  
 /* Checked Inputs */
  
