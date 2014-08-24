@@ -28,6 +28,17 @@ html{
     height:100%;
 }
 
+
+.bodyBackNone{
+    background-image:none;
+}
+
+.bodyBack{
+    background-image: url("../../Images/loginBack.jpg");
+    background-size:   cover;
+    background-repeat:no-repeat;
+}
+
 body {
     background-color: #fff;
     color: #333;
@@ -36,9 +47,7 @@ body {
     margin: 0;
     padding: 0;
     height:100%;
-    background-image: url("../../Images/loginBack.jpg");
-    background-size:   cover;
-    background-repeat:no-repeat;
+   
 }
 
 a {
@@ -207,6 +216,10 @@ footer {
     margin-right:250px;
 }
 
+.footLog{
+    margin-top:250px;
+    color:white;
+}
 
 .loginDiv{
 	margin-bottom:5px; 
