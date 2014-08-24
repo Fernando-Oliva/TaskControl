@@ -5,15 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="loginHeader">User Login</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, "Incorrect Login");
-    <div>
+    <div class="loginBack">
         <fieldset>
             <legend>Login Form</legend>
-            <div>
+            <h2 class="loginHeaderLog">Sign In</h2>
+            <div class="lo">    
                 @Html.TextBoxFor(model => model.UserName, new { placeholder = "Email"})
             </div>
             <div>

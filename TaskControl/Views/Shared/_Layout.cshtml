@@ -11,7 +11,6 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
-    <div class="back">
         <header>
             <div class="content-wrapper">
                 <div align="right" class="loginDiv">
@@ -51,6 +50,9 @@
                 @RenderBody()
             </section>
         </div>
+
+@if (Session["auth"] != null)
+{ 
         <footer>
             <div class="content-wrapper" >
                 <div style="text-align:center; padding-top:10px;">
@@ -58,9 +60,9 @@
                 </div>
             </div>
         </footer>
-
+}
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
-        </div>
+
     </body>
 </html>

@@ -8,7 +8,8 @@
 .back
 {
 	background-image: url("../../Images/loginBack.jpg");
-	height:1000px;
+	background-size:   cover;
+    
 }
 .applinkname
 {
@@ -22,6 +23,11 @@
 	font-family:Hug Me Tight;
 }
 
+html{
+     margin: 0;
+    height:100%;
+}
+
 body {
     background-color: #fff;
     color: #333;
@@ -29,6 +35,10 @@ body {
     font-family: Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    height:100%;
+    background-image: url("../../Images/loginBack.jpg");
+    background-size:   cover;
+    background-repeat:no-repeat;
 }
 
 a {
@@ -210,6 +220,34 @@ footer {
 	text-decoration:none;
 	font-family:Helvetica;
 }
+
+.loginBack{
+    /*background-color:#202020;*/
+    width:500px;
+    margin: 0 auto 0 auto;
+    height:300px;
+    border-radius:15px;
+    opacity:0.95;
+    margin-top:180px;
+
+background: #7d7e7d; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+-webkit-box-shadow: 0 10px 6px -6px #383838 ;
+	   -moz-box-shadow: 0 10px 6px -6px #383838 ;
+	        box-shadow: 0 10px 6px -6px #383838 ;
+}
+
+.lo{
+    margin-top:40px;
+}
+
 /* site title
 ----------------------------------------------------------*/
 .site-title {
@@ -482,6 +520,15 @@ aside {
 	margin-bottom:60px;
 	margin-left:700px;
 	margin-right:700px;
+}
+
+.loginHeaderLog{
+	border-bottom: 1px solid #E8E8E8;
+	padding-bottom:21px;
+	color: #D0D0D0 ;
+    font-family:Helvetica;
+    font-weight:lighter;
+	font-size:32px; 
 }
 
 /* login page */
