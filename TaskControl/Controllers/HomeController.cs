@@ -29,7 +29,10 @@ namespace TaskControl.Controllers
         {
             ViewBag.Message = "Herramientas SegurosBroker.com";
 
+            string createdBy = Session["user"].ToString();
+
             var task = from t in db.Tasks
+                       where t.CreatedBy == createdBy
                            select t;
 
             switch (sortOrder)
@@ -136,6 +139,7 @@ namespace TaskControl.Controllers
                 task.Priority = Convert.ToInt32(Request.Form["rating"]);
 
                 task.Date = DateTime.Now;
+                task.CreatedBy = Session["user"].ToString();
 
                 db.Tasks.Add(task);
                 db.SaveChanges();

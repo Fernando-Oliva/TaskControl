@@ -54,6 +54,8 @@ namespace TaskControl.Controllers
                 if (Isvalid(user.UserName, user.Password))
                 {
                     Session["auth"] = "1";
+                    Session["user"] = user.UserName;
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

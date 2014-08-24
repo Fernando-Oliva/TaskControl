@@ -28,6 +28,8 @@ namespace TaskControl.Models
         public DateTime Date { get; set; }
 
         public int Priority { get; set; }
+
+        public string CreatedBy { get; set; }
     }
 
     public class TaskDBContext : DbContext
@@ -39,11 +41,12 @@ namespace TaskControl.Models
     {
         public int ID { get; set; }
 
-        [Required(ErrorMessage = "User name field is required")]
+        [Required(ErrorMessage = "Email field is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Password field is required")]
-        public string Password { get; set; }
+        public string Password { get; set; }  
     }
 
     public class UserDBContext : DbContext

@@ -73,7 +73,7 @@
                 <svg class="circle" height="20" width="25">
                     <circle cx="15" cy="10" r="10" fill="green" />
                 </svg>
-                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName) / </span>
+                <span class="taskName">@Html.DisplayFor(modelItem => item.TaskName) / @Html.DisplayFor(modelItem => item.CreatedBy) /</span>
             <strong class="taskName">
                 @if (string.IsNullOrEmpty(item.Who))
                 {
