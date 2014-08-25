@@ -9,6 +9,22 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+
+        <script type="text/javascript">
+            function update() {
+                if ($(window).scrollTop() > 400) {
+                    $('.signup_scroll').animate({
+                        "bottom": '0px'
+                    }, 300);
+                } else {
+                    $('.signup_scroll').animate({
+                        "bottom": '-90px'
+                    }, 300);
+                }
+            }
+
+            setInterval(update, 500);
+    </script>
     </head>
 
 @{
@@ -28,8 +44,8 @@
         <header>
             <div class="content-wrapper">
                 <div align="right" class="loginDiv">
+                    <div style="text-align:left; margin-left:10px;">@Html.ActionImage("Index", "Home", "../../Images/logo-seguros-broker.png", "200", "Index", "Logo")</div> 
                     
-                    <div class="appname">@Html.ActionLink("*gawain", "Index", "Home", new { @class = "applinkname"})<span class="subappname">(esto es <a href="http://es.wikipedia.org/wiki/Idioma_tagalo" target="_blank">Tagalo</a>)</span></div>
                     
                     @if (Session["auth"] != null)
                     { 
@@ -82,7 +98,7 @@
      <footer class="@footLog">
             <div class="content-wrapper" >
                 <div style="text-align:center; padding-top:10px;">
-                    &copy; @DateTime.Now.Year - <span style="font-family:Courier; font-size:15px;">Proudly powered by {be<strong>code</strong>}</span>
+                    &copy; @DateTime.Now.Year - <span style="font-family:Courier; font-size:15px;"><strong>Seguros</strong>broker</span>
                 </div>
             </div>
         </footer>

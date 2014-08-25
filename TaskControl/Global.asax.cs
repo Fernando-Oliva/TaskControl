@@ -21,6 +21,7 @@ namespace TaskControl
             AreaRegistration.RegisterAllAreas();
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TaskControl.Models.TaskDBContext, Migrations.Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TaskControl.Models.UserDBContext, Migrations.UserDBContext.Configuration>());
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
